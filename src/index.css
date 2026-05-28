@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Custom branding colors */
+  --color-navy-darkest: #0B132B;
+  --color-navy-dark: #1C2541;
+  --color-navy-medium: #3A506B;
+  --color-navy-light: #5BC0BE;
+  --color-silver-light: #F4F6F9;
+  --color-silver-dark: #BAC8D3;
+  --color-orange-brand: #FF6B35;
+  --color-orange-dark: #E0531D;
+}
+
+/* Custom styles and smooth scroll behaviour */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* Header compensation */
+}
+
+body {
+  background-color: #F8FAFC; /* Clean Slate-50 backdrop */
+  color: #1E293B; /* Elegant Slate-800 */
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom Webkit scrollbar for premium theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 5px;
+  border: 2px solid #F8FAFC;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F97316;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(28, 37, 65, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(28, 37, 65, 0.08);
+}
+
+.glass-card-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 107, 53, 0.4);
+  box-shadow: 0 12px 30px -10px rgba(255, 107, 53, 0.15);
+}
+
+/* Custom parallax support */
+.bg-desert-parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 1024px) {
+  .bg-desert-parallax {
+    background-attachment: scroll; /* Disable fixed scroll behavior on iOS / mobile */
+  }
+}
+
+/* Linear animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float 4s ease-in-out infinite;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Reliable Services & Solutions",
+  "description": "Premium residential and commercial services in New River, Arizona. Local family-owned contracting, emergency service, and maintenance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
